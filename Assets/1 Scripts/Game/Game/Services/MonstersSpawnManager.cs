@@ -2,7 +2,6 @@ using GameCOP.AI;
 using GameCOP.Combat;
 using GameCOP.Spawning;
 using UnityEngine;
-using CharacterController = GameCOP.Moving.CharacterController;
 
 namespace GameCOP
 {
@@ -34,9 +33,9 @@ namespace GameCOP
 
             _playerData = services.Get<PlayerData>();
 
-            _eventsManager.Listen<DieEvent>(this);
-
             _camera = Camera.main;
+
+            _eventsManager.Listen<DieEvent>(this);
         }
 
         public void OnDestroy()
@@ -61,6 +60,32 @@ namespace GameCOP
             );
 
             monsterView.Actor.Send(new AITargetSetEvent { Value = _playerData.Value });
+        }
+
+        public void Update(float deltaTime)
+        {
+            _monstersSpawn.SpawnTimer -= deltaTime;
+
+            if (_monstersSpawn.SpawnTimer > 0f) return;
+
+            if (_monstersSpawn.Count < _monstersSpawn.MaxCount)
+            {
+                _monstersSpawn.SpawnTimer = Random.Range(2f, 8f);
+
+                Spawn();
+            }
+            else
+            {
+                _updateManager.Remove(this);
+            }
+        }
+
+        public void HandleEvent(DieEvent arguments)
+        {
+            if (!arguments.Value.Has<MonsterTag>()) return;
+
+            _monstersSpawn.Count--;
+            Spawn();
         }
 
         private static Vector3 GetRandomOffscreenPosition(Camera camera)
@@ -104,32 +129,6 @@ namespace GameCOP
 
 
             return position;
-        }
-
-        public void Update(float deltaTime)
-        {
-            _monstersSpawn.SpawnTimer -= deltaTime;
-
-            if (_monstersSpawn.SpawnTimer > 0f) return;
-
-            if (_monstersSpawn.Count < _monstersSpawn.MaxCount)
-            {
-                _monstersSpawn.SpawnTimer = Random.Range(2f, 8f);
-
-                Spawn();
-            }
-            else
-            {
-                _updateManager.Remove(this);
-            }
-        }
-
-        public void HandleEvent(DieEvent arguments)
-        {
-            if (!arguments.Value.Has<MonsterTag>()) return;
-
-            _monstersSpawn.Count--;
-            Spawn();
         }
     }
 }

@@ -29,8 +29,7 @@ namespace GameCOP.Combat
 
         public void HandleEvent(TriggerEnter arguments)
         {
-            var target = arguments.Target;
-            target?.Send(new GetDamage { Damage = _attacker.Damage });
+            arguments.Target?.Send(new GetDamage { Damage = _attacker.Damage });
         }
     }
 }

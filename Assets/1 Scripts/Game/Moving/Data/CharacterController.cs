@@ -1,6 +1,6 @@
 using System;
 
-namespace GameCOP.Moving
+namespace GameCOP
 {
     [Serializable]
     public class CharacterController : Data

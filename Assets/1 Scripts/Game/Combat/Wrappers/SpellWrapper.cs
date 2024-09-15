@@ -13,8 +13,8 @@ namespace GameCOP.Combat
             base.Bind(actor);
 
             actor.Add<Attacker>();
-            actor.Add(speed);
             actor.Add<Lifetime>().Value = lifetime;
+            actor.Add(speed);
 
             actor.AddBehaviour<SpellBehaviour>();
             actor.AddBehaviour<MoveForwardBehaviour>();

@@ -5,7 +5,6 @@ namespace GameCOP.Combat
     public class MonsterBehaviour : Behaviour, IListener<CollisionEnter>
     {
         private Attacker _attacker;
-        // private Character _character;
 
         public override void Bind(IActor actor)
         {

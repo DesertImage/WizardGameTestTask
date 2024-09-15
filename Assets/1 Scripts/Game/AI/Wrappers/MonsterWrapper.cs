@@ -1,7 +1,6 @@
 using GameCOP.Combat;
 using GameCOP.Moving;
 using UnityEngine;
-using CharacterController = GameCOP.Moving.CharacterController;
 
 namespace GameCOP.AI
 {

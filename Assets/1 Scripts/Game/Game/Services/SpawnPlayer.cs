@@ -1,6 +1,6 @@
 using GameCOP.Spawning;
 
-namespace GameCOP.Game
+namespace GameCOP
 {
     public class SpawnPlayer : IAwakable
     {

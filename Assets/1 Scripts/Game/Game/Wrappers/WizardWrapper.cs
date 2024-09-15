@@ -3,7 +3,6 @@ using GameCOP.Combat;
 using GameCOP.Input;
 using GameCOP.Moving;
 using UnityEngine;
-using CharacterController = GameCOP.Moving.CharacterController;
 
 namespace GameCOP
 {
