@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4b24940ff64ba2b624a147510019da, type: 3}
+  m_Name: ObjectsLibrary
+  m_EditorClassIdentifier: 
+  spawningNodes:
+  - Id: 1
+    Instance: {fileID: 1391758719581530950, guid: f5d4313b614a34a9186ef52e1d5eda1b, type: 3}
+    PreRegisterCount: 1
+  - Id: 5
+    Instance: {fileID: 1391758719581530950, guid: a93fb391c167c40239113374e192062b, type: 3}
+    PreRegisterCount: 1
+  - Id: 6
+    Instance: {fileID: 509559397782969039, guid: 083681f4b07294ade9fa9b918d3909d7, type: 3}
+    PreRegisterCount: 1
+  - Id: 2
+    Instance: {fileID: 1391758719581530950, guid: 6145349dd01444ef1b2e07f04fc7d85d, type: 3}
+    PreRegisterCount: 1
+  - Id: 3
+    Instance: {fileID: 6366551106513543649, guid: 60719b760e93b43ceb4e4ef3160635ad, type: 3}
+    PreRegisterCount: 1
+  - Id: 4
+    Instance: {fileID: 3895388823294174624, guid: 876d333f8949644228129177cf17ae01, type: 3}
+    PreRegisterCount: 1
